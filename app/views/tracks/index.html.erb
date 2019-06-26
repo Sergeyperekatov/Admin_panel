@@ -1,0 +1,43 @@
+<h1>Tracks</h1>
+<div class="well">
+  <%= link_to "New track", new_track_path, class: "btn btn-primary" %>
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Исполнитель</th>
+      <th>Название трэка</th>
+      <th>Предпологаемая дата релиза</th>
+      <th>Обложка</th>
+      <th>Файл</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @tracks.size == 0 %>
+      <tr>
+        <td colspan="6">No tracks found.</td>
+      </tr>
+    <% else %>
+      <% @tracks.each do |track| %>
+        <tr>
+          <td><%= track.author %></td>
+          <td><%= track.name %></td>
+          <td><%= track.release_date.split('-', 3).reverse.join('-') %></td>
+          <td>          </td>
+          <td>          </td>
+          <td><%= link_to "Edit", edit_track_path(track), class: "btn btn-default" %>
+          </td>
+          <td><%= button_to "Delete", track, method: :delete, data: { confirm: "Are you sure you wish to delete #{track.author} #{track.name}?" }, class: "btn btn-danger" %>
+           </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

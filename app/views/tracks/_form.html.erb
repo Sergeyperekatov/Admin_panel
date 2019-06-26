@@ -1,0 +1,15 @@
+<%= form_with model: @track, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :release_date %>
+    <%= f.date_field :release_date, class: "form-control" %>
+  </div>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
