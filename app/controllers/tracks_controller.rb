@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
   
   def index
-    @tracks = Track.all
+    @tracks = Track.all #('created_at DESC') для сортировки
   end
 
   def new
@@ -39,6 +39,6 @@ class TracksController < ApplicationController
   end
 private
   def track_params
-    params.require(:track).permit(:author, :name, :release_date)
+    params.require(:track).permit(:author, :name, :release_date, :image)
   end
 end
