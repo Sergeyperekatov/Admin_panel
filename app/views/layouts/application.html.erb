@@ -6,11 +6,25 @@
   <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
-    <%= yield %>
+     <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/home/index">Audio Uploader</a> 
+
+      <div>
+       <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link" href="/tracks">Трэки</a></li>
+       </ul> 
+      </div>
+
+
+       
+    </nav> 
   </div>
+  <%= yield %>
   </body>
 </html>
