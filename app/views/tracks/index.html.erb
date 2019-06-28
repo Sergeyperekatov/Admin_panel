@@ -30,8 +30,11 @@
           <td><%= track.author %></td>
           <td><%= track.name %></td>
           <td><%= track.release_date.split('-', 3).reverse.join('-') %></td>
-          <td><%= image_tag( track.image.url, alt: 'Image') if track.image? %>          </td>
-          <td>          </td>
+          <td><img src="<%=track.image.url %>" height="150px" width="150px" alt=" " />
+           <!-- <%= image_tag(track.image.url, alt: 'Image') if track.image? %> --> </td>
+          <td>
+            <audio controls src="<%= track.audio.url %>"></audio>         
+         </td>
           <td><%= link_to "Edit", edit_track_path(track), class: "btn btn-default" %>
           </td>
           <td><%= button_to "Delete", track, method: :delete, data: { confirm: "Are you sure you wish to delete #{track.author} #{track.name}?" }, class: "btn btn-danger" %>
