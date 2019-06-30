@@ -9,7 +9,7 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(track_params)
+    @track = current_user.tracks.new(track_params)
 
     if @track.save
       redirect_to tracks_path, notice: "The track #{@track.author} #{@track.name} has been added!" and return
