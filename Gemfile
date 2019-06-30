@@ -42,6 +42,8 @@ gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 #The MiniMagick to crop and scale images
 gem 'mini_magick'
 gem 'carrierwave-audio'
+gem 'devise'
+gem 'rails_admin', '~> 2.0.0.beta'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
