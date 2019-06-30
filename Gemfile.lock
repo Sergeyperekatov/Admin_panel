@@ -131,6 +131,9 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    kaminari-mongoid (1.0.1)
+      kaminari-core (~> 1.0)
+      mongoid
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -280,6 +283,7 @@ DEPENDENCIES
   devise
   duktape
   jbuilder (~> 2.5)
+  kaminari-mongoid
   mini_magick
   mongoid (~> 6.0)
   puma (~> 3.11)
