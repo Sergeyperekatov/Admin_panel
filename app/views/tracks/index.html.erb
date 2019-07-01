@@ -25,7 +25,7 @@
         <td colspan="6">No tracks found.</td>
       </tr>
     <% else %>
-      <% @tracks.each do |track| %>
+      <% @tracks.where(user_id: current_user).each do |track| %>
         <tr>
           <td><%= track.author %></td>
           <td><%= track.name %></td>
