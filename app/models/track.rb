@@ -9,7 +9,7 @@ class Track
   field :audio, type: String
   mount_uploader :audio, AudioUploader
   mount_uploader :image, ImageUploader
-validates :author, length: { maximum: 140 }, presence: true
+  validates :author, length: { maximum: 140 }, presence: true
 validates :name, length: { maximum: 140 }, presence: true
 validates :image, file_size: { less_than: 10.megabytes }
 end
